@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saraiva na Estrada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .poem-container {
+      display: none;
+      max-width: 700px;
+      margin: 50px auto;
+      text-align: left;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 250px;
+      border-radius: 10px;
+    }
+    .password-input {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ff4500;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ff5722;
+    }
+    a.open-html {
+      display: block;
+      margin-top: 20px;
+      background-color: #ff4500;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    a.open-html:hover {
+      background-color: #ff5722;
+    }
+  </style>
+  <script>
+    function unlockPage() {
+      const password = document.getElementById("password").value.trim().toUpperCase(); 
+      if (password === "MALAQUIAS") {
+        document.getElementById("password-section").style.display = "none";
+        setTimeout(() => {
+          document.querySelector(".poem-container").style.display = "block";
+          document.getElementById("saraiva-audio").play(); // Reproduz o áudio
+        }, 500);
+      } else {
+        alert("Senha incorreta! Tente novamente.");
+        document.getElementById("password").value = ""; // Limpar input após erro
+      }
+    }
+
+    function resetPage() {
+      document.getElementById("password-section").style.display = "block";
+      document.querySelector(".poem-container").style.display = "none";
+      document.getElementById("password").value = ""; 
+    }
+  </script>
+</head>
+<body>
+  <h1>Saraiva na Estrada</h1>
+  
+  <div id="password-section">
+    <p>Digite a senha para acessar a obra-prima:</p>
+    <input type="password" id="password" placeholder="Digite a senha" autocomplete="off">
+    <button class="password-input" onclick="unlockPage()">Desbloquear</button>
+  </div>
+
+  <div class="poem-container">
+    <img src="images/E096253F-8F1A-43CE-8674-4CCE30A4CF39.jpeg" alt="Grande Saraiva">
+    <h2>🔥 O Rap do Saraiva 🔥</h2>
+    <p>
+      O Saraiva na estrada, recomeça o setup,<br>
+      O PC desligou? Aí complica o backup.<br>
+      No Paraguai ele vai, tecnologia comprar,<br>
+      E no fone só Racionais, sem tempo pra errar.<br>
+    </p>
+    <p>
+      A mente calibrada, só foco e missão,<br>
+      Enquanto escuta o som, rodando a operação.<br>
+      Ele cola no free shop, cabos HDMI,<br>
+      “Me vê um teclado mecânico e um SSD aí.”<br>
+    </p>
+    <p>
+      Do monitor ultrawide ao headset bolado,<br>
+      Até o IBGE passou e ficou impressionado.<br>
+      “Isso aqui é um sonho, é a NASA no PC!”<br>
+      Mas se não rodar Warzone, ele faz devolver.<br>
+    </p>
+    <p>
+      E assim segue a saga, conexão instável,<br>
+      Mas com um ping de elite e mentalidade inabalável.<br>
+      Se a grana apertar, já tem o plano B,<br>
+      Rodar pros “hermanos” e importar um I7.<br>
+    </p>
+    <p>
+      Um guerreiro da farda, do código e da rua,<br>
+      Se o setup travar, já tem placa de lua.<br>
+      Saraiva na estrada, missão especial,<br>
+      Só volta quando a compra for internacional!<br>
+    </p>
+
+    <br>
+    <button onclick="resetPage()">Tentar Novamente</button>
+
+    <audio id="saraiva-audio" controls>
+      <source src="audio/yt1s.com - Homem na Estrada.mp3" type="audio/mp3">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+  </div>
+
+</body>
+</html>
